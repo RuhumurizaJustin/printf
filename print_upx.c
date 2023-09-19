@@ -9,7 +9,7 @@
  */
 int print_upx(va_list arguments, char *buf, unsigned int ibuf)
 {
-	int int_input, i, isnegative, count, first_digit;
+	int int_input, k, isnegative, count, first_digit;
 	char *hexadecimal, *binary;
 
 	int_input = va_arg(arguments, int);
@@ -28,13 +28,13 @@ int print_upx(va_list arguments, char *buf, unsigned int ibuf)
 	binary = fill_binary_array(binary, int_input, isnegative, 32);
 	hexadecimal = malloc(sizeof(char) * (8 + 1));
 	hexadecimal = fill_hex_array(binary, hexadecimal, 1, 8);
-	for (first_digit = i = count = 0; hexadecimal[i]; i++)
+	for (first_digit = k = count = 0; hexadecimal[k]; k++)
 	{
-		if (hexadecimal[i] != '0' && first_digit == 0)
+		if (hexadecimal[k] != '0' && first_digit == 0)
 			first_digit = 1;
 		if (first_digit)
 		{
-			ibuf = handl_buf(buf, hexadecimal[i], ibuf);
+			ibuf = handl_buf(buf, hexadecimal[k], ibuf);
 			count++;
 		}
 	}

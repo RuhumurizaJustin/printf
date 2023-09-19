@@ -9,7 +9,7 @@
  */
 int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 {
-	short int int_input, i, isnegative, count, first_digit;
+	short int int_input, j, isnegative, count, first_digit;
 	char *hexadecimal, *binary;
 
 	int_input = va_arg(arguments, int);
@@ -31,13 +31,13 @@ int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 	hexadecimal = malloc(sizeof(char) * (4 + 1));
 	hexadecimal = fill_hex_array(binary, hexadecimal, 1, 4);
 
-	for (first_digit = i = count = 0; hexadecimal[i]; i++)
+	for (first_digit = j = count = 0; hexadecimal[j]; j++)
 	{
-		if (hexadecimal[i] != '0' && first_digit == 0)
+		if (hexadecimal[j] != '0' && first_digit == 0)
 			first_digit = 1;
 		if (first_digit)
 		{
-			ibuf = handl_buf(buf, hexadecimal[i], ibuf);
+			ibuf = handl_buf(buf, hexadecimal[j], ibuf);
 			count++;
 		}
 	}

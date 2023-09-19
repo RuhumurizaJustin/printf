@@ -10,7 +10,7 @@
 int prinsint(va_list arguments, char *buf, unsigned int ibuf)
 {
 	int int_input;
-	unsigned int int_in, int_temp, i, div;
+	unsigned int int_in, int_temp, k, div;
 
 	int_input = va_arg(arguments, int);
 	if (int_input < 0)
@@ -30,9 +30,9 @@ int prinsint(va_list arguments, char *buf, unsigned int ibuf)
 		div *= 10;
 		int_temp /= 10;
 	}
-	for (i = 0; div > 0; div /= 10, i++)
+	for (k = 0; div > 0; div /= 10, k++)
 	{
 		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
 	}
-	return (i + 1);
+	return (k + 1);
 }
