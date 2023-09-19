@@ -28,24 +28,24 @@ int ev_print_func(const char *s, int index)
 		{"+ i", prinpint}, {"+ d", prinpint}, {" %", print_prg},
 		{NULL, NULL},
 	};
-	int i = 0, j = 0, first_index;
+	int a = 0, b = 0, first_index;
 
 	first_index = index;
-	while (pr[i].type_arg)
+	while (pr[a].type_arg)
 	{
-		if (s[index] == pr[i].type_arg[j])
+		if (s[index] == pr[a].type_arg[b])
 		{
-			if (pr[i].type_arg[j + 1] != '\0')
-				index++, j++;
+			if (pr[a].type_arg[b + 1] != '\0')
+				index++, b++;
 			else
 				break;
 		}
 		else
 		{
-			j = 0;
-			i++;
+			b = 0;
+			a++;
 			index = first_index;
 		}
 	}
-	return (j);
+	return (b);
 }
