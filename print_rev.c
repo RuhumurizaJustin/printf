@@ -11,7 +11,7 @@ int print_rev(va_list arguments, char *buf, unsigned int ibuf)
 {
 	char *str;
 	unsigned int i;
-	int j = 0;
+	int k = 0;
 	char nill[] = "(llun)";
 
 	str = va_arg(arguments, char *);
@@ -23,10 +23,10 @@ int print_rev(va_list arguments, char *buf, unsigned int ibuf)
 	}
 	for (i = 0; str[i]; i++)
 		;
-	j = i - 1;
-	for (; j >= 0; j--)
+	k = i - 1;
+	for (; k >= 0; k--)
 	{
-		ibuf = handl_buf(buf, str[j], ibuf);
+		ibuf = handl_buf(buf, str[k], ibuf);
 	}
 	return (i);
 }
