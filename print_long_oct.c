@@ -34,7 +34,7 @@ int prinloct(va_list arguments, char *buf, unsigned int ibuf)
 			first_digit = 1;
 		if (first_digit)
 		{
-			ibuf = handl_buf(buf, octal[i], ibuf);
+			ibuf = handl_buf(buf, octal[c], ibuf);
 			count++;
 		}
 	}

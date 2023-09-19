@@ -30,7 +30,7 @@ int prinlhex(va_list arguments, char *buf, unsigned int ibuf)
 	hexadecimal = fill_hex_array(binary, hexadecimal, 0, 16);
 	for (first_digit = j = count = 0; hexadecimal[j]; j++)
 	{
-		if (hexadecimala[j] != '0' && first_digit == 0)
+		if (hexadecimal[j] != '0' && first_digit == 0)
 			first_digit = 1;
 		if (first_digit)
 		{

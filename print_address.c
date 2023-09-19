@@ -36,7 +36,7 @@ int print_add(va_list arguments, char *buf, unsigned int ibuf)
 	hexadecimal = fill_hex_array(binary, hexadecimal, 0, 16);
 	ibuf = handl_buf(buf, '0', ibuf);
 	ibuf = handl_buf(buf, 'x', ibuf);
-	for (first_digit = i = count = 0; hexadecimal[k]; k++)
+	for (first_digit = k = count = 0; hexadecimal[k]; k++)
 	{
 		if (hexadecimal[k] != '0' && first_digit == 0)
 			first_digit = 1;
